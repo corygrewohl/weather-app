@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+$textColor: white;
+$backgroundColor: rgba($color: #000000, $alpha: 0.9);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    @include flexCenter($direction: column);
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../day.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+.time-container {
+    background-color: $backgroundColor;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    padding: 40px;
+    font-size: 36px;
+}
+
+.search-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .search-form {
+        background-color: $backgroundColor;
+        color: white;
+        padding: 40px;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 4px;
+    }
+
+    input {
+        background-color: black;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        height: 30px;
+        width: inherit;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+
+        &:hover {
+            background-color: rgb(44, 44, 44);
+        }
+    }
+
+
+}
+
+.weather-data-container {
+    @include flexCenter($direction: column);
+    height: 50vh;
+    width: 50vw;
+    gap: 30%;
+
+    background-color: $backgroundColor;
+    color: $textColor;
+    border-radius: 8px;
+
+    #title {
+        position: absolute;
+    }
+
+    .temp-container {
+        @include flexCenter($direction: column);
+
+        div {
+            @include flexCenter($direction: column);
+            font-size: 24px;
+        }
+
+        .temp-container-inner {
+            @include flexCenter($direction: row);
+            gap: 4%;
+
+            p {
+                font-size: 128px;
+            }
+        
+            span {
+                font-size: 36px;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .change-temp-container {
+        @include flexCenter($direction: row);
+        gap: 10%;
+
+        button {
+            color: black;
+            height: 90px;
+            width: 240px;
+            background-color: skyblue;
+            border-radius: 6px;
+            font-size: 36px;
+        }
+    }
+}
